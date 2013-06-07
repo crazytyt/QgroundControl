@@ -2,4 +2,3 @@
 1. Disable the SSL certificate, add this to ~/.bash_profile
 export GIT_SSL_NO_VERIFY=true
 
-
