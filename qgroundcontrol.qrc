@@ -248,4 +248,7 @@
         <file alias="AirframeFactMetaData.xml">src/AutoPilotPlugins/PX4/AirframeFactMetaData.xml</file>
         <file alias="ParameterFactMetaData.xml">src/AutoPilotPlugins/PX4/ParameterFactMetaData.xml</file>
     </qresource>
+    <qresource prefix="/lang">
+        <file>qg_cn_support.qm</file>
+    </qresource>
 </RCC>

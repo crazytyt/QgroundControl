@@ -30,12 +30,12 @@ UASQuickView::UASQuickView(QWidget *parent) : QWidget(parent),
     //If we don't have any predefined settings, set some defaults.
     if (uasPropertyValueMap.size() == 0)
     {
-        valueEnabled("altitudeAMSL");
-        valueEnabled("altitudeAMSLFT");
-        valueEnabled("altitudeWGS84");
-        valueEnabled("altitudeRelative");
-        valueEnabled("groundSpeed");
-        valueEnabled("distToWaypoint");
+        valueEnabled(tr("altitudeAMSL"));
+        valueEnabled(tr("altitudeAMSLFT"));
+        valueEnabled(tr("altitudeWGS84"));
+        valueEnabled(tr("altitudeRelative"));
+        valueEnabled(tr("groundSpeed"));
+        valueEnabled(tr("distToWaypoint"));
     }
 
     QAction *action = new QAction("Add/Remove Items",this);

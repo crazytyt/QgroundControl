@@ -31,6 +31,7 @@ This file is part of the QGROUNDCONTROL project
 #include <QtGlobal>
 #include <QApplication>
 #include <QSslSocket>
+#include <QTranslator>
 #ifndef __mobile__
 #include <QSerialPortInfo>
 #endif
@@ -92,7 +93,6 @@ int WindowsCrtReportHook(int reportType, char* message, int* returnValue)
 
 int main(int argc, char *argv[])
 {
-
 #ifdef Q_OS_MAC
 #ifndef __ios__
     // Prevent Apple's app nap from screwing us over
@@ -161,6 +161,10 @@ int main(int argc, char *argv[])
 
     QGCApplication* app = new QGCApplication(argc, argv, runUnitTests);
     Q_CHECK_PTR(app);
+
+    QTranslator translator;
+    translator.load(":/lang/qg_cn_support.qm");
+    app->installTranslator(&translator);
 
     // There appears to be a threading issue in qRegisterMetaType which can cause it to throw a qWarning
     // about duplicate type converters. This is caused by a race condition in the Qt code. Still working

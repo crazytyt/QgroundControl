@@ -115,11 +115,11 @@ Rectangle {
                 horizontalAlignment:    Text.AlignHCenter
                 wrapMode:               Text.WordWrap
                 font.pixelSize:         ScreenTools.mediumFontPixelSize
-                text:                   "Welcome to QGroundControl. " +
+                text:                   qsTr("Welcome to QGroundControl. " +
                                             "QGroundControl supports any <font color=\"orange\"><a href=\"http://www.qgroundcontrol.org/mavlink/start\">mavlink</a></font> enabled vehicle. " +
                                             "If you are using the <font color=\"orange\"><a href=\"https://pixhawk.org/choice\">PX4 Flight Stack</a></font>, you also get full support for setting up and calibrating your vehicle. "+
                                             "Otherwise you will only get support for flying a vehicle which has been setup and calibrated using other means. " +
-                                            "Use the Connect button above to connect to your vehicle."
+                                            "Use the Connect button above to connect to your vehicle.")
 
                 onLinkActivated: Qt.openUrlExternally(link)
             }
@@ -152,7 +152,7 @@ Rectangle {
             imageResource: "/qmlimages/VehicleSummaryIcon.png"
             setupIndicator: false
             exclusiveGroup: setupButtonGroup
-            text:           "SUMMARY"
+            text:           qsTr("SUMMARY")
 
             onClicked: showSummaryPanel()
         }
@@ -164,7 +164,7 @@ Rectangle {
             setupIndicator: false
             exclusiveGroup: setupButtonGroup
             visible:        controller.showFirmware
-            text:           "FIRMWARE"
+            text:           qsTr("FIRMWARE")
 
             onClicked: showFirmwarePanel()
         }

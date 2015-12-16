@@ -710,3 +710,17 @@ include(QGCSetup.pri)
 #
 
 include(QGCInstaller.pri)
+
+DISTFILES += \
+    qg_cn_support.ts \
+    qg_cn_support.qm
+
+#OTHER_FILES += \
+ #   $$PWD/src/VehicleSetup/SetupView.qml
+
+lupdate_only {
+    SOURCES += \
+        src/VehicleSetup/SetupView.qml \
+        src/ui/toolbar/MainToolBar.qml \
+        src/ViewWidgets/ViewWidget.qml
+}
