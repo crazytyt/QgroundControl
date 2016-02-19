@@ -301,7 +301,10 @@ MainWindow::MainWindow(QSplashScreen* splashScreen)
 #ifdef __mobile__
         menuBar()->hide();
 #endif
-        show();
+	menuBar()->hide();
+	setWindowFlags(windowFlags()& ~Qt::WindowMaximizeButtonHint& ~Qt::WindowMinimizeButtonHint);
+	showMaximized();
+
 #ifdef Q_OS_MAC
         // TODO HACK
         // This is a really ugly hack. For whatever reason, by having a QQuickWidget inside a
