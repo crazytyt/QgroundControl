@@ -58,6 +58,7 @@ This file is part of the QGROUNDCONTROL project
 Q_DECLARE_METATYPE(QSerialPortInfo)
 #endif
 
+#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
 #ifdef Q_OS_WIN
 
 /// @brief Message handler which is installed using qInstallMsgHandler so you do not need
@@ -165,6 +166,10 @@ int main(int argc, char *argv[])
     QTranslator translator;
     translator.load(":/lang/qg_cn_support.qm");
     app->installTranslator(&translator);
+    QFont font  = app->font();
+    font.setPointSize(12);
+    app->setFont(font);
+
 
     // There appears to be a threading issue in qRegisterMetaType which can cause it to throw a qWarning
     // about duplicate type converters. This is caused by a race condition in the Qt code. Still working
